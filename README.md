@@ -19,6 +19,11 @@
 1. Fork 或创建新仓库
 2. 将工作流文件保存到 `.github/workflows/build-caddy.yml`
 3. 创建 `plugins.txt` 文件配置需要的插件
+4. **重要**：确保仓库 Actions 有写入权限
+   - 进入仓库 `Settings` → `Actions` → `General`
+   - 找到 `Workflow permissions`
+   - 选择 `Read and write permissions`
+   - 点击 `Save`
 
 ### 2. 配置插件
 
@@ -196,7 +201,16 @@ xcaddy build $VERSION \
 
 ## 🐛 常见问题
 
-**Q: 构建失败怎么办？**
+**Q: 构建失败，提示 "GitHub release failed with status: 403"？**
+A: 这是权限问题。解决方法：
+1. 进入仓库的 `Settings` → `Actions` → `General`
+2. 滚动到 `Workflow permissions` 部分
+3. 选择 `Read and write permissions`
+4. 勾选 `Allow GitHub Actions to create and approve pull requests`（可选）
+5. 点击 `Save` 保存
+6. 重新运行工作流
+
+**Q: 其他构建失败怎么办？**
 A: 检查 Actions 日志，通常是插件路径错误或版本不兼容。
 
 **Q: 如何添加私有插件？**
