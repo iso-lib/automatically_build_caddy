@@ -1,1 +1,43 @@
+# Caddy 插件配置文件
+# 每行一个插件，格式：--with <module_path>[@<version>]
+# 以 # 开头的行为注释，空行会被忽略
 
+# ===== DNS 提供商插件 =====
+--with github.com/caddy-dns/cloudflare
+#--with github.com/caddy-dns/alidns
+#--with github.com/caddy-dns/dnspod
+#--with github.com/caddy-dns/route53
+
+# ===== 安全与认证 =====
+#--with github.com/greenpau/caddy-security
+#--with github.com/caddy-dns/lego-deprecated
+
+# ===== 动态 DNS =====
+#--with github.com/mholt/caddy-dynamicdns
+
+# ===== 速率限制 =====
+#--with github.com/mholt/caddy-ratelimit
+
+# ===== 响应处理 =====
+#--with github.com/caddyserver/replace-response
+
+# ===== 正向代理增强 =====
+#--with github.com/caddyserver/forwardproxy
+
+# ===== 其他实用插件 =====
+#--with github.com/caddy-dns/acmedns
+#--with github.com/mholt/caddy-l4
+--with github.com/mholt/caddy-webdav
+
+# ===== 自定义版本示例 =====
+# --with github.com/some/plugin@v1.2.3
+
+# ===== 常用插件参考 =====
+# Cloudflare DNS: github.com/caddy-dns/cloudflare
+# Aliyun DNS: github.com/caddy-dns/alidns
+# Transform/Replace: github.com/caddyserver/replace-response
+# Crowdsec: github.com/hslatman/caddy-crowdsec-bouncer
+# Webdav: github.com/mholt/caddy-webdav
+# Git: github.com/greenpau/caddy-git
+# Ratelimit: github.com/mholt/caddy-ratelimit
+# Layer4: github.com/mholt/caddy-l4
